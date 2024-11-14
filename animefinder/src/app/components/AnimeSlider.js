@@ -1,3 +1,4 @@
+"use client";
 // src/components/AnimeSlider.js
 import React from "react";
 

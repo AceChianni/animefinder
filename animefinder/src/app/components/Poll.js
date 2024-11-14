@@ -1,4 +1,6 @@
 // src/components/Poll.js
+"use client";
+
 import React, { useState } from "react";
 
 const Poll = () => {

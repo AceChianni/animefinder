@@ -5,7 +5,7 @@ import Poll from "./components/Poll";
 
 const HomePage = () => (
   <div className="home-page">
-    <h1>Welcome to the Anime Finder!</h1>
+    <h1>Annii's Anime Finder!</h1>
     <AnimeSlider />
     <Poll />
   </div>

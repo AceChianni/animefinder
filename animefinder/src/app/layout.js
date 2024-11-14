@@ -1,17 +1,13 @@
-// src/app/layout.js
-
+import "../styles/globals.css";
 import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import "../styles/globals.css"; // Global CSS imports
 
 const Layout = ({ children }) => (
-  <div className="layout">
-    <Navbar />
-    <div className="content">
-      <Sidebar />
-      <main>{children}</main>
-    </div>
-  </div>
+  <html lang="en">
+    <body>
+      <Navbar />
+      <div className="main-content">{children}</div>
+    </body>
+  </html>
 );
 
 export default Layout;

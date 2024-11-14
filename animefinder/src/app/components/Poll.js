@@ -1,48 +1,22 @@
 // src/components/Poll.js
-"use client";
+"use client"; // Ensure this is added to indicate it's a client-side component
 
 import React, { useState } from "react";
 
 const Poll = () => {
   const [pollResults, setPollResults] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setPollResults("Thank you for voting!");
-  };
-
   return (
-    <aside className="poll">
-      <h2>Best Starting Anime Poll</h2>
-      <form id="animePoll" onSubmit={handleSubmit}>
-        {[
-          "Pokemon",
-          "One Piece",
-          "Jujutsu Kaisen",
-          "Bleach",
-          "Naruto",
-          "Demon Slayer",
-        ].map((anime) => (
-          <label key={anime}>
-            <input type="radio" name="anime" value={anime.toLowerCase()} />{" "}
-            {anime}
-          </label>
-        ))}
-        <label className="inline-label">
-          <input type="radio" name="anime" value="other" /> Other:
-          <input
-            type="text"
-            name="otherText"
-            className="small-text"
-            placeholder="Type other anime"
-          />
-        </label>
-        <button type="submit" className="heart-button">
-          ❤
-        </button>
-      </form>
-      <div className="poll-results">{pollResults}</div>
-    </aside>
+    <div className="poll-container">
+      <h2>Poll</h2>
+      <input
+        type="text"
+        value={pollResults}
+        onChange={(e) => setPollResults(e.target.value)}
+        placeholder="Enter your poll answer"
+      />
+      <p>Your poll result: {pollResults}</p>
+    </div>
   );
 };
 

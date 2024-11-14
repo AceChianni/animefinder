@@ -8,8 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--background)", // background color from CSS variables
+        foreground: "var(--foreground)", // foreground color from CSS variables
+        primary: "#FFD166", // Custom primary color for background
+        secondary: "#FF9BEC", // Sidebar color
+        accent: "#AE9BFF", // Poll and navbar color
+      },
+      fontFamily: {
+        sans: ["Arial", "sans-serif"], // Adding Arial font
+        cursive: ['"Comic Sans MS"', "cursive"], // Adding Comic Sans font
       },
     },
   },

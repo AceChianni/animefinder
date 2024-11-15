@@ -31,52 +31,90 @@
 // export default AnimeSlider;
 //
 
-// src/app/components/AnimeSlider.js
+"use client";
 
-"use client"; // Needed for components with interactivity
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react"; // Swiper components
 import "swiper/css"; // Swiper core styles
-import "swiper/css/navigation"; // Swiper navigation styles
-import { Navigation } from "swiper";
+import "swiper/css/navigation"; // Navigation styles
+import "swiper/css/pagination"; // Pagination styles
+import "../../styles/animeSlider.css"; // Slider styles
 
 const AnimeSlider = () => {
   const [animeList, setAnimeList] = useState([]);
+  const [loading, setLoading] = useState(true); // Track loading state
+  const [error, setError] = useState(null); // Track any errors
 
   useEffect(() => {
-    // Fetch top anime from the Jikan API
-    const fetchTopAnime = async () => {
+    // Fetch data from Jikan API (Top Anime)
+    const fetchAnimeData = async () => {
       try {
         const response = await fetch("https://api.jikan.moe/v4/top/anime");
+        if (!response.ok) throw new Error("Failed to fetch data");
+
         const data = await response.json();
-        setAnimeList(data.data); // Update state with the anime list
+        setAnimeList(data.data); // Set the fetched data to state
       } catch (error) {
-        console.error("Error fetching anime data:", error);
+        setError(error.message); // Set error message if fetch fails
+      } finally {
+        setLoading(false); // Set loading to false once data is fetched
       }
     };
 
-    fetchTopAnime();
-  }, []);
+    fetchAnimeData();
+  }, []); // Empty dependency array ensures it runs only once when the component mounts
+
+  if (loading) {
+    return (
+      <div className="loading-message">
+        <div className="spinner"></div>
+        <p>Loading anime...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div className="error-message">Error: {error}</div>;
+  }
 
   return (
     <div className="anime-slider">
       <h2>Top Anime Right Now</h2>
-      <Swiper
-        modules={[Navigation]}
-        navigation
-        spaceBetween={30}
-        slidesPerView={3}
-        loop={true}
-      >
-        {animeList.map((anime) => (
-          <SwiperSlide key={anime.mal_id}>
-            <div className="anime-item">
-              <img src={anime.images.jpg.large_image_url} alt={anime.title} />
-              <h3>{anime.title}</h3>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {animeList.length > 0 ? (
+        <Swiper
+          spaceBetween={30} // Space between each slide
+          slidesPerView={3} // Default number of slides per view
+          loop={true} // Enable looping through slides
+          pagination={{ clickable: true }} // Pagination configuration
+          navigation={true} // Navigation configuration
+          breakpoints={{
+            640: {
+              slidesPerView: 1, // 1 slide per view on small screens
+            },
+            768: {
+              slidesPerView: 2, // 2 slides per view on medium screens
+            },
+            1024: {
+              slidesPerView: 3, // 3 slides per view on larger screens
+            },
+          }}
+        >
+          {/* Dynamically render each anime from the animeList */}
+          {animeList.map((anime) => (
+            <SwiperSlide key={anime.mal_id}>
+              <div className="anime-item">
+                <img
+                  src={anime.images.jpg.large_image_url}
+                  alt={anime.title || "Anime image"}
+                />
+                <h3>{anime.title}</h3>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <p>No anime available</p> // In case no anime data is returned
+      )}
     </div>
   );
 };

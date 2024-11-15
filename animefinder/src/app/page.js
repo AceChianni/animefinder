@@ -7,7 +7,6 @@ const HomePage = () => (
   <div className="home-page">
     <h1>Annii's Anime Finder!</h1>
     <AnimeSlider />
-    <Poll />
   </div>
 );
 

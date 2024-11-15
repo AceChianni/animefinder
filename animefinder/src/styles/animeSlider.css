@@ -1,0 +1,32 @@
+.anime-slider {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  max-width: 90%;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+}
+
+.anime-card {
+  min-width: 150px;
+  max-width: 150px;
+  text-align: center;
+}
+
+.anime-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.anime-title {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}

@@ -4,6 +4,8 @@
   margin: 0 auto;
   padding: 20px;
   text-align: center;
+  overflow: hidden;
+  /* Prevent overflow/scrolling */
 }
 
 .anime-slider h2 {
@@ -23,9 +25,10 @@
 .anime-item img {
   width: 100%;
   height: auto;
+  max-width: 300px;
+  /* Prevent images from being too wide */
   border-radius: 8px;
   object-fit: cover;
-  max-width: 300px;
   margin-bottom: 10px;
 }
 

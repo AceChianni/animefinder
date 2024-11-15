@@ -30,7 +30,6 @@
 
 // export default AnimeSlider;
 //
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -104,7 +103,10 @@ const AnimeSlider = () => {
             <SwiperSlide key={anime.mal_id}>
               <div className="anime-item">
                 <img
-                  src={anime.images.jpg.large_image_url}
+                  src={
+                    anime.images?.jpg?.large_image_url ||
+                    "https://via.placeholder.com/300x400?text=No+Image"
+                  }
                   alt={anime.title || "Anime image"}
                 />
                 <h3>{anime.title}</h3>

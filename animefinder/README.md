@@ -51,17 +51,40 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 # Day 1 Log
 
-Tasks Completed:
+### Tasks Completed
+- Initialized the Next.js project using `create-next-app`.
+- Brainstormed ideas for the website layout, features, and functionality.
+- Drew up wireframes for the home/splash page.
+- Learned about the benefits of Next.js, including its server-side rendering capabilities.
+- Researched and began understanding Firebase for authentication.
 
-Set up the Next.js project using create-next-app.
+### Challenges and Solutions
+- **Challenge**: Limited familiarity with Next.js features and setup.
+  - **Solution**: Spent time reviewing [Next.js Documentation](https://nextjs.org/docs) to understand its core concepts and capabilities.
+- **Challenge**: Unsure how Firebase authentication integrates with Next.js.
+  - **Solution**: Found and studied tutorials specific to Firebase integration in Next.js ([Firebase Docs](https://firebase.google.com/docs)).
+
+### Learnings and Insights
+- Learned about Next.js features, such as server-side rendering and static site generation, and their impact on performance and SEO.
+- Discovered how Firebase authentication can streamline the user login process and improve security.
+- The wireframe process helped visualize the site structure and clarified the placement of components.
+
+### Next Steps
+- Begin building the website by creating the Navbar and Sidebar components.
+- Implement a basic layout for the home page.
+- Integrate Firebase into the project to set up user authentication.
+
+
+# Day 2 Log
+
+### Tasks Completed:
 Created the Navbar component with navigation links for Home, Quiz, Recommendations, Contact Us, and Waifu pages.
 Configured the root layout.js with <html> and <body> tags for proper rendering.
 Added global styles via globals.css.
 Implemented the basic structure of the homepage, including the Navbar, Poll, and Sidebar components.
 
 
-Challenges and Solutions:
-
+### Challenges and Solutions:
 Challenge: Missing <html> and <body> tags in the root layout.
 Solution: Added these tags in layout.js to comply with Next.js requirements.
 Challenge: Errors with Link components in the Navbar due to incorrect prop usage.
@@ -70,15 +93,13 @@ Challenge: Import issues with globals.css.
 Solution: Corrected the file path and successfully imported the stylesheet.
 
 
-Learnings and Insights:
-
+###Learnings and Insights:
 Learned about structuring the root layout.js file and the significance of wrapping all content with <html> and <body> in Next.js.
 Improved understanding of the differences between react-router-dom and Next.js Link components.
 Gained insights into managing global styles with globals.css.
 
 
-Next Steps:
-
+### Next Steps:
 Develop and integrate the Poll component.
 Build the AnimeSlider component to showcase featured anime dynamically.
 Create the Sidebar for additional navigational elements.

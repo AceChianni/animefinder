@@ -1,5 +1,6 @@
 // src/app/page.js
-
+import "../styles/animeSlider.css";
+import "../styles/globals.css";
 import AnimeSlider from "./components/AnimeSlider";
 
 const HomePage = () => (

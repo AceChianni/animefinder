@@ -105,3 +105,40 @@ Build the AnimeSlider component to showcase featured anime dynamically.
 Create the Sidebar for additional navigational elements.
 Plan and draft the Quiz and Recommendations pages.
 ```
+
+# Day 3 Log
+
+## Tasks Completed
+
+Refactored and implemented the AnimeSlider component.
+Integrated the Jikan API to fetch and display top anime dynamically.
+Displayed images, titles, and navigation buttons.
+Styled the Anime Slider in animeSlider.css:
+Ensured a responsive and user-friendly design.
+Positioned the navigation buttons correctly below the slideshow.
+Fixed layout issues with unwanted scrollbars in the slideshow container.
+Cleaned up styles to maintain separation between global.css and animeSlider.css.
+
+## Challenges and Solutions
+
+Challenge: Buttons were misaligned and overlapped the slides.
+Solution: Updated the layout in animeSlider.css to position buttons below the slideshow with proper alignment.
+
+Challenge: Scrollbars appeared in the slider container.
+Solution: Adjusted styles to remove excess overflow and ensure a clean display.
+
+Challenge: Properly integrating and fetching data from the Jikan API.
+Solution: Researched API documentation and wrote efficient fetch logic for dynamic rendering.
+
+## Learnings and Insights
+
+Deepened understanding of dynamic component rendering with API integration in Next.js.
+Improved skills in separating global and component-specific styles for better maintainability.
+Learned how to handle edge cases for slideshow navigation (e.g., disabling buttons when at the beginning or end).
+
+## Next Steps
+
+Enhance the Anime Slider:
+Add animation transitions for smoother navigation.
+Begin work on the "Top Anime Poll" component.
+Plan and draft layouts for the remaining pages: Quiz, Recommendations, Contact, and Waifu Gallery.

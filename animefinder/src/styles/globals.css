@@ -4,8 +4,10 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Arial", sans-serif;
-  background-color: #ffd166; /* Background color */
-  color: #333333; /* Dark text color for readability */
+  background-color: #ffd166;
+  /* Background color */
+  color: #333333;
+  /* Dark text color for readability */
 }
 
 /* Link Styles */
@@ -17,23 +19,27 @@ a {
 h1,
 h2,
 h3 {
-  color: #333333; /* Dark color for headings */
+  color: #333333;
+  /* Dark color for headings */
 }
 
 /* Navigation Bar */
 .navbar {
-  background-color: #ae9bff; /* Light purple navbar */
+  background-color: #ae9bff;
+  /* Light purple navbar */
   overflow: hidden;
   text-align: center;
   position: fixed;
-  width: 100%; /* Full width */
+  width: 100%;
+  /* Full width */
   top: 0;
   z-index: 1000;
 }
 
 .navbar a {
   display: inline-block;
-  color: #ffffff; /* Light text color */
+  color: #ffffff;
+  /* Light text color */
   padding: 14px 16px;
   text-align: center;
   font-size: 16px;
@@ -41,7 +47,8 @@ h3 {
 }
 
 .navbar a:hover {
-  background-color: #9b79ff; /* Darker purple on hover */
+  background-color: #9b79ff;
+  /* Darker purple on hover */
 }
 
 /* Title */
@@ -65,18 +72,21 @@ h3 {
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background-color: #ff9bec; /* Updated sidebar background color */
+  background-color: #ff9bec;
+  /* Updated sidebar background color */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: #ffffff; /* Light text color */
+  color: #ffffff;
+  /* Light text color */
 }
 
 .sidebar h2 {
   font-family: "Comic Sans MS", cursive;
   font-size: 20px;
   margin-bottom: 15px;
-  color: #ffd166; /* Color for sidebar h2 */
+  color: #ffd166;
+  /* Color for sidebar h2 */
 }
 
 .sidebar ul {
@@ -88,7 +98,8 @@ h3 {
 }
 
 .sidebar ul li a {
-  color: #ffffff; /* Light text color */
+  color: #ffffff;
+  /* Light text color */
   text-decoration: none;
 }
 
@@ -103,39 +114,92 @@ h3 {
 
 .anime-heading {
   font-family: Arial, sans-serif;
-  color: #eeeeee; /* Light text color */
+  color: #eeeeee;
+  /* Light text color */
   margin-top: 20px;
 }
 
 /* Anime Slideshow */
 .anime-slider {
+  display: block;
+  /* Override flex to prevent layout issues with Swiper */
+  margin: 0 auto;
+  /* Center the slider horizontally */
+  width: 100%;
+  max-width: 1000px;
+  /* Set max width for larger screens */
+  padding: 20px;
+  /* Add some padding */
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Optional box-shadow for aesthetics */
+  border-radius: 8px;
+  /* Optional rounded corners */
+}
+
+.anime-item {
+  text-align: center;
+}
+
+.anime-item img {
+  width: 100%;
+  max-height: 500px;
+  /* Limit height for images */
+  object-fit: contain;
+  /* Ensure images fit correctly */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Custom Navigation Buttons */
+.custom-nav {
   display: flex;
   justify-content: center;
-  width: 400px;
-  height: 600px;
-  position: relative;
-}
-
-.slide {
-  display: none;
-  position: absolute;
-}
-
-.slide img {
+  gap: 10px;
+  margin-top: 20px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+  z-index: 2;
+  /* Make sure buttons are above the slideshow */
+}
+
+.custom-nav button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  color: white;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 100px;
+  /* Prevent buttons from getting too small */
+}
+
+.custom-nav button:hover {
+  background-color: #2980b9;
+}
+
+.custom-nav button:focus {
+  outline: none;
+  box-shadow: 0 0 4px 2px rgba(52, 152, 219, 0.7);
+}
+
+.custom-nav button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
 }
 
 /* Poll */
 .poll {
   width: 250px;
-  background-color: #ae9bff; /* Updated poll background color */
+  background-color: #ae9bff;
+  /* Updated poll background color */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: #ffffff; /* Light text color */
+  color: #ffffff;
+  /* Light text color */
   margin-top: 20px;
 }
 
@@ -143,7 +207,8 @@ h3 {
   font-family: "Comic Sans MS", cursive;
   font-size: 20px;
   margin-bottom: 15px;
-  color: #ffe1b3; /* Color for poll h2 */
+  color: #ffe1b3;
+  /* Color for poll h2 */
 }
 
 .poll form {
@@ -178,7 +243,8 @@ h3 {
 
 .poll-bar {
   height: 20px;
-  background-color: #b3d1ff; /* Light blue progress bar */
+  background-color: #b3d1ff;
+  /* Light blue progress bar */
   border-radius: 4px;
   transition: width 0.3s ease;
 }
@@ -186,7 +252,8 @@ h3 {
 /* Heart Button */
 .heart-button {
   padding: 10px 15px;
-  background-color: #ffe1b3; /* Original heart button color */
+  background-color: #ffe1b3;
+  /* Original heart button color */
   color: white;
   border: none;
   cursor: pointer;
@@ -199,5 +266,6 @@ h3 {
 }
 
 .heart-button:hover {
-  background-color: #f7ffb3; /* Light yellow hover color */
+  background-color: #f7ffb3;
+  /* Light yellow hover color */
 }
